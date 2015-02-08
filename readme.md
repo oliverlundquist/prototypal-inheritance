@@ -1,2 +1,1 @@
-JavaScript Protoypal Inheritance excercise.
-
+JavaScript Prototypal Inheritance exercise.
