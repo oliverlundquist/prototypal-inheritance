@@ -1,0 +1,2 @@
+JavaScript Protoypal Inheritance excercise.
+
