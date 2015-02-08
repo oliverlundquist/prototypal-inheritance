@@ -9,26 +9,22 @@ rabbit;
 
 //
 rabbit = inherit(animal);
-console.log('undefined: ' +animal.full); //undefined
-console.log('undefined: ' +rabbit.full); //undefined
+console.log('undefined: ' + animal.full); //undefined
+console.log('undefined: ' + rabbit.full); //undefined
 rabbit.eat();
-console.log('undefined: ' +animal.full); //undefined
-console.log('true: ' +rabbit.full); //true
-
-//
-console.log('---------');
+console.log('undefined: ' + animal.full); //undefined
+console.log('true: ' + rabbit.full); //true
+console.log('----------------');
 
 //
 animal.full = false;
 rabbit = inherit(animal);
-console.log('false: ' +animal.full); //false
-console.log('false: ' +rabbit.full); //false
+console.log(' 1: false: ' + animal.full); //false
+console.log(' 2: false: ' + rabbit.full); //false
 rabbit.eat();
-console.log('false: ' +animal.full); //false
-console.log('true: ' +rabbit.full); //true
-
-//
-console.log('---------');
+console.log(' 3: false: ' + animal.full); //false
+console.log(' 4: true: ' + rabbit.full); //true
+console.log('----------------');
 
 ////
 // Constructor function
@@ -42,23 +38,30 @@ Rabbit.prototype.eatMore = function () { this.full = true; };
 animal = new Animal();
 rabbit = new Rabbit();
 rabbit.eat();
-console.log('false: ' +animal.full); //false
-console.log('true: ' +rabbit.full); //true
+console.log(' 5: false: ' + animal.full); //false
+console.log(' 6: true: ' + rabbit.full); //true
+console.log('----------------');
+
+//
+rabbit = new Rabbit();
+rabbit.eatMore();
+console.log(' 7: true: ' + rabbit.full); //true
+console.log('----------------');
 
 //
 animal = new Animal();
 rabbit = new Rabbit();
-console.log('false: ' +rabbit.hasOwnProperty('full')); //false
+console.log(' 8: false: ' + rabbit.hasOwnProperty('full')); //false
 rabbit.eat();
-console.log('true: ' +rabbit.hasOwnProperty('full')); //true
-
+console.log(' 9: true: ' + rabbit.hasOwnProperty('full')); //true
+console.log('----------------');
 
 //
 animal = new Animal();
 rabbit = new Rabbit();
-console.log('false: ' +rabbit.hasOwnProperty('full')); //false
+console.log('10: false: ' + rabbit.hasOwnProperty('full')); //false
 rabbit.setConstructor();
-console.log('true: ' +rabbit.hasOwnProperty('full')); //true
+console.log('11: true: ' + rabbit.hasOwnProperty('full')); //true
 
 
 ////
