@@ -8,17 +8,21 @@ function OnewayInheritor () {};
 function Twoway () {};
 function TwowayInheritor () {};
 
-log(Oneway, OnewayInheritor, Twoway, TwowayInheritor);
-
+////
+// Inherited prototype
 Oneway.prototype.oneway = true;
 OnewayInheritor.prototype = new Oneway();
 OnewayInheritor.prototype.onewayinheritor = true;
+Oneway.prototype.oneway2 = true;
+OnewayInheritor.prototype.onewayinheritor2 = true;
 
-log(Oneway, OnewayInheritor, Twoway, TwowayInheritor);
-
+////
+// Shared prototype
 Twoway.prototype.twoway = true;
 TwowayInheritor.prototype = Twoway.prototype;
 TwowayInheritor.prototype.twowayinheritor = true;
+Twoway.prototype.twoway2 = true;
+TwowayInheritor.prototype.twowayinheritor2 = true;
 
 log(Oneway, OnewayInheritor, Twoway, TwowayInheritor);
 
